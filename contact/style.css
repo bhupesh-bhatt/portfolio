@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: "Ubuntu", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6e93f7;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4070f4;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 998;
+    transition: all 0.3s ease;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+nav.sticky {
+    background: #4070f4;
+    padding: 8px 0;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+nav .navbar {
+    width: 95%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+nav .navbar .logo a {
+    font-weight: 500;
+    font-size: 35px;
+    color: #4070f4;
+}
+
+nav.sticky .navbar .logo a {
+    color: #fff;
+}
+
+nav .navbar .menu {
+    display: flex;
+    position: relative;
+}
+
+nav .navbar .menu li {
+    list-style: none;
+    margin: 0 8px;
+}
+
+.navbar .menu a,
+.navbar .menu span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #310e0e;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.navbar .menu a {
+    padding: 6px, 0;
+}
+
+nav ul li {
+    padding: 0 5px;
+    position: relative;
+}
+
+nav ul .non-active-page:after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #2192ff;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: 0.5s;
+}
+
+nav ul .non-active-page:hover::after {
+    width: 100%;
+}
+
+nav.sticky ul .non-active-page:after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #303030;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: 0.5s;
+}
+
+nav.sticky ul .non-active-page:hover::after {
+    width: 100%;
+}
+
+.navbar .menu a:hover,
+.navbar .menu {
+    color: #4070f4;
+    text-decoration: darkblue;
+}
+
+.navbar .menu {
+    padding-right: 20px;
+}
+
+nav.sticky .menu a,
+nav.sticky .menu {
+    color: #FFF;
+}
+
+nav.sticky .menu a:hover,
+nav.sticky .menu {
+    color: #000000;
+}
+
+nav .menu-btn,
+.navbar .menu .cancel-btn {
+    position: absolute;
+    color: #fff;
+    right: 30px;
+    top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+nav .menu-btn {
+    color: #4070f4;
+}
+
+nav.sticky .menu-btn {
+    color: #FFF;
+}
+
+.navbar .menu .menu-btn {
+    color: #fff;
+}
+
+
+@media (max-width: 1000px) {
+    nav .navbar {
+        width: 95%;
+    }
+
+
+    nav .navbar .menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        background: #0a1922;
+        height: 100vh;
+        max-width: 400px;
+        width: 100%;
+        padding-top: 60px;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.8s ease;
+    }
+
+    .navbar.active .menu {
+        left: 0;
+    }
+
+    nav .navbar .menu a,
+    nav .navbar .menu span {
+        font-size: 23px;
+        display: block;
+        color: #fff;
+        margin: 10px 0;
+    }
+
+    nav.sticky .menu a:hover,
+    nav.sticky .menu span:hover {
+        color: #4070f4;
+    }
+
+
+    nav .menu-btn,
+    .navbar .menu .cancel-btn {
+        display: block;
+    }
+}
+
+.navbar .menu .active-page{
+    color: #4070f4;
+}
+
+nav.sticky .menu .active-page{
+    color: #000000;
+}
+
+nav ul .active-page:after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #2192ff;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: 0.5s;
+    width: 100%;
+}
+
+nav.sticky ul .active-page:after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #303030;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: 0.5s;
+    width: 100%;
+}
+
+
+section {
+    padding-top: 40px;
+}
+
+section .content {
+    margin: 40px auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+section .title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+section .title span {
+    color: #1d1615;
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+section .title span::before,
+section .title span::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #ea1d6f;
+    left: 0;
+    bottom: 0;
+}
+
+section .title span::after {
+    bottom: -7px;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
